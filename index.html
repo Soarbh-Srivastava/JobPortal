@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="en"><head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- Bootstrap 5.3 link -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">	
+	<!-- Font-family -->	
+	<link href="css/style.css" rel="stylesheet">	
+	<link href="css/style_1.css" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+  <style>
+    .filter-section button{
+      border: 1px solid #ccc;
+    }
+    .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            background-color: #ededed;
+            border: none !important;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+
+        .dropdown-content button {
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #FF4153;
+            color: #fff;
+        }
+
+        .show {
+            display: block;
+        }
+        .form-control{
+          margin-top: 10px;
+        }
+        @media (max-width: 1000px){
+          .navbar-center .nav-item {
+          line-height: 30px !important;
+          background: #ededed;
+          border-bottom: 1px solid #2a3b4a;
+       }
+}
+        @media (max-width: 1000px){
+        #navbarSupportedContent {
+            background: #fff;
+            z-index: 1;
+            padding: 0 15px 15px;
+            box-shadow: 0 10px 60px 1px rgba(0,0,0,.08)!important;
+            transition: 1s ease;
+            margin-top: 10px;
+            background: #ededed;
+          }
+        }
+
+  </style>
+</head>
+<body>
+<!-- banner start here -->
+<div class="banner">
+<!-- header start here -->
+<header id="header">
+<!-- navbar start here -->
+<nav class="navbar navbar-expand-lg navbar-light">
+	<div class="container-fluid">
+		<!-- navbar-brand -->
+		<a class="navbar-brand" href="home.html">
+			<img src="images/Logo.png" class="w-100 main-logo" alt="Logo" title="Logo">
+		</a>
+		<!-- toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- navbar links -->
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav navbar-center m-auto">
+				<li class="nav-item">
+          <li class="nav-item dropdown">
+            <div class="filter-section">
+                <button id="locationDropdownButton" class="dropdown-toggle" onclick="toggleDropdown('locationDropdown')">Filter by Location</button>
+                <div id="locationDropdown" class="dropdown-content">
+                    <!-- ... Location all here ... -->
+                </div>
+            </div>
+        </li>
+        </li>
+				<li class="nav-item">
+          <li class="nav-item dropdown">
+            <div class="filter-section">
+                <button id="categoryDropdownButton" class="dropdown-toggle" onclick="toggleDropdown('categoryDropdown')">Filter by Category</button>
+                <div id="categoryDropdown" class="dropdown-content">
+                    <!-- ... category all here ... -->
+                </div>
+            </div>
+        </li>
+        <li class="nav-item active">
+          <li class="nav-item" style="
+          outline: none;">
+            <div class="filter-section" style="
+            outline: none;">
+    <input type="number" id="salaryFilter" min="0" oninput="filterJobs()"
+    style="
+           outline: none;
+           margin-top: 10px;
+           /* Remove the increment/decrement arrows */
+           -webkit-appearance: none;
+           -moz-appearance: textfield;
+           appearance: textfield;
+           "
+    class="form-control" placeholder="Filter by Salary (min)" 
+    onfocus="this.style.outline='none'" 
+    onblur="this.style.outline='';">
+
+        
+            </div>
+          </li>
+        </li>
+	</div>
+
+</nav><!-- navbar -->
+</header>
+<!-- header -->
+
+<section class="homePage">
+	<div class="container-fluid">
+		
+	</div>
+</section>
+<!-- homePage -->
+</div>
+  <div style="margin-top: 50px; padding-left: 20px; padding-right: 20px;" id="jobList"></div>
+  
+  <script>
+  function loadJSON(callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.overrideMimeType("application/json");
+      xhr.open('GET', 'jobs.json', true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          callback(JSON.parse(xhr.responseText));
+        }
+      };
+      xhr.send(null);
+    }
+
+    function displayJobs(jobs) {
+  const jobListDiv = document.getElementById('jobList');
+  jobListDiv.innerHTML = '';
+
+  // Create a row container
+  let rowContainer;
+  for (let i = 0; i < jobs.length; i++) {
+    if (i % 4 === 0) {
+      rowContainer = document.createElement('div');
+      rowContainer.className = 'row';
+    }
+
+    const job = jobs[i];
+    const jobCard = document.createElement('div');
+    jobCard.className = 'col-sm-3 job-card'; // Adjust class to col-sm-3 and add job-card class
+    jobCard.innerHTML = `<div class="jobBox">
+        <img class="w-100" src="images/job-for-you.png" alt="Job">
+        <div class="jobBox-content">
+          <h3>${job.title}</h3>
+          <button type="button" class="btn btn-outline-warning">Apply Now</button>
+        </div>
+        <div class="jobBox-hover">
+          <div class="card">
+            <img class="card-img-top" src="images/job-hover.png" alt="Job">
+            <div class="jobBox-hover-content">
+              <i class="fa fa-cube" aria-hidden="true"></i>
+              <h3>${job.title}</h3>	
+            </div>
+            <div class="card-body">
+              <h4>${job.title}</h4>
+              <ul class="list-unstyled mb-0">
+                <li>Category: ${job.category}</li>
+                <li>Salary: $${job.salary}</li>
+                <li>Location: ${job.location}</li>
+              </ul>
+            </div>
+            <a>Apply Now</a>
+          </div>
+        </div>
+      </div>
+    `;
+
+    rowContainer.appendChild(jobCard);
+
+    // If this is the last job or the fourth job in the row, append the row container
+    if (i % 4 === 3 || i === jobs.length - 1) {
+      jobListDiv.appendChild(rowContainer);
+    }
+  }
+}
+
+function filterJobs() {
+  loadJSON(function (jobData) {
+    const categoryFilter = selectedCategory.toLowerCase(); // Using the selectedCategory from dropdown
+    const locationFilter = selectedLocation.toLowerCase(); // Using the selectedLocation from dropdown
+    const salaryFilter = parseFloat(document.getElementById('salaryFilter').value) || 0;
+
+    const filteredJobs = jobData.filter(job => {
+      const categoryMatch = !categoryFilter || job.category.toLowerCase().includes(categoryFilter);
+      const locationMatch = !locationFilter || job.location.toLowerCase().includes(locationFilter);
+      const salaryMatch = job.salary >= salaryFilter;
+
+      return categoryMatch && locationMatch && salaryMatch;
+    });
+
+    displayJobs(filteredJobs);
+  });
+}
+let selectedCategory = '';
+let selectedLocation = '';
+let jobData;
+
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  dropdown.classList.toggle('show');
+}
+
+function updateCategoryDropdownText(category) {
+  const categoryDropdownButton = document.getElementById('categoryDropdownButton');
+  categoryDropdownButton.innerText = category !== '' ? category : 'Filter by Category';
+}
+
+function filterByCategory(category) {
+  selectedCategory = category;
+  updateCategoryDropdownText(category);
+  filterJobs();
+}
+
+function updateLocationDropdownText(location) {
+  const locationDropdownButton = document.getElementById('locationDropdownButton');
+  locationDropdownButton.innerText = location !== '' ? location : 'Filter by Location';
+}
+
+function filterByLocation(location) {
+  selectedLocation = location;
+  updateLocationDropdownText(location);
+  filterJobs();
+}
+
+// Rest of the code remains the same...
+
+// Initial display
+loadJSON(function(data) {
+  jobData = data;
+  filterJobs();
+});
+
+  </script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- More function here -->
+  <script>
+  $(document).ready(function() {
+      // Configure/customize these variables.
+      var showChar = 501;  // How many characters are shown by default
+      var ellipsestext = "....";
+      var moretext = "More";
+      var lesstext = "More less";
+      
+      $('.more').each(function() {
+          var content = $(this).html();
+   
+          if(content.length > showChar) {
+   
+              var c = content.substr(0, showChar);
+              var h = content.substr(showChar, content.length - showChar);
+   
+              var html = c + '<span class="moreellipses">' + ellipsestext+ ' </span><span class="morecontent"><span>' + h + '</span>  <a href="" class="morelink">' + moretext + '</a></span>';
+   
+              $(this).html(html);
+          }
+      });
+   
+      $(".morelink").click(function(){
+          if($(this).hasClass("less")) {
+              $(this).removeClass("less");
+              $(this).html(moretext);
+          } else {
+              $(this).addClass("less");
+              $(this).html(lesstext);
+          }
+          $(this).parent().prev().slideToggle();
+          $(this).prev().slideToggle();
+          return false;
+      });
+  });
+  </script>
+  
+  <!-- Popover function here -->
+  <script>
+  $(document).ready(function(){
+    $('[data-bs-toggle="popover"]').popover({
+      trigger: 'hover',
+      html: true,
+      }) 
+  });
+  
+  // Assuming jobData is an array of job objects
+
+// Extract unique categories from jobData
+const uniqueCategories = Array.from(new Set(jobData.map(job => job.category)));
+
+// Get the button container
+const categoryButtonContainer = document.getElementById('categoryDropdown');
+
+// Clear any existing buttons
+categoryButtonContainer.innerHTML = '';
+
+// Create a button for 'All' category
+const allButton = document.createElement('button');
+allButton.textContent = 'All';
+allButton.onclick = () => filterByCategory('');
+categoryButtonContainer.appendChild(allButton);
+
+// Create buttons for each unique category
+uniqueCategories.forEach(category => {
+  const button = document.createElement('button');
+  button.textContent = category;
+  button.onclick = () => filterByCategory(category);
+  categoryButtonContainer.appendChild(button);
+});
+
+
+// Assuming jobData is an array of job objects
+
+// Extract unique locations from jobData
+const uniqueLocations = Array.from(new Set(jobData.map(job => job.location)));
+
+// Get the button container for locations
+const locationButtonContainer = document.getElementById('locationDropdown');
+
+// Clear any existing buttons
+locationButtonContainer.innerHTML = '';
+
+// Create a button for 'All' location
+const allLocationButton = document.createElement('button');
+allLocationButton.textContent = 'All';
+allLocationButton.onclick = () => filterByLocation('');
+locationButtonContainer.appendChild(allLocationButton);
+
+// Create buttons for each unique location
+uniqueLocations.forEach(location => {
+  const button = document.createElement('button');
+  button.textContent = location;
+  button.onclick = () => filterByLocation(location);
+  locationButtonContainer.appendChild(button);
+});
+
+</script>
+  
+</body>
+</html>

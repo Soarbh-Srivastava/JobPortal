@@ -1,0 +1,198 @@
+[
+  {
+      "category": "Administration, business, and management",
+      "title": "Business Development Manager",
+      "details": "Responsible for expanding business opportunities.",
+      "salary": 80000.0,
+      "location": "New York"
+  },
+  {
+      "category": "Administration, business, and management",
+      "title": "Executive Assistant",
+      "details": "Supporting high-level executives in various tasks.",
+      "salary": 60000.0,
+      "location": "Los Angeles"
+  },
+  {
+      "category": "Administration, business, and management",
+      "title": "Financial Analyst",
+      "details": "Analyzing financial data and making investment recommendations.",
+      "salary": 75000.0,
+      "location": "Chicago"
+  },
+  {
+      "category": "Alternative therapies",
+      "title": "Massage Therapist",
+      "details": "Providing massage therapy to clients for relaxation and pain relief.",
+      "salary": 45000.0,
+      "location": "San Francisco"
+  },
+  {
+      "category": "Alternative therapies",
+      "title": "Acupuncturist",
+      "details": "Performing acupuncture to promote health and relieve pain.",
+      "salary": 55000.0,
+      "location": "Seattle"
+  },
+  {
+      "category": "Alternative therapies",
+      "title": "Yoga Instructor",
+      "details": "Teaching yoga classes and promoting physical and mental well-being.",
+      "salary": 40000.0,
+      "location": "Denver"
+  },
+  {
+      "category": "Animals, land, and environment",
+      "title": "Wildlife Biologist",
+      "details": "Studying wildlife populations and habitats to promote conservation.",
+      "salary": 65000.0,
+      "location": "Portland"
+  },
+  {
+      "category": "Animals, land, and environment",
+      "title": "Environmental Scientist",
+      "details": "Researching environmental issues and developing solutions.",
+      "salary": 70000.0,
+      "location": "Austin"
+  },
+  {
+      "category": "Animals, land, and environment",
+      "title": "Agricultural Engineer",
+      "details": "Designing and developing agricultural equipment and systems.",
+      "salary": 72000.0,
+      "location": "Minneapolis"
+  },
+  {
+      "category": "Computing and ICT",
+      "title": "Software Developer",
+      "details": "Creating software applications and systems.",
+      "salary": 85000.0,
+      "location": "San Jose"
+  },
+  {
+      "category": "Computing and ICT",
+      "title": "Data Analyst",
+      "details": "Analyzing data to provide insights for decision-making.",
+      "salary": 70000.0,
+      "location": "Boston"
+  },
+  {
+      "category": "Computing and ICT",
+      "title": "Network Administrator",
+      "details": "Managing and maintaining computer networks.",
+      "salary": 68000.0,
+      "location": "Dallas"
+  },
+  {
+      "category": "Construction and building",
+      "title": "Construction Manager",
+      "details": "Overseeing construction projects from planning to completion.",
+      "salary": 90000.0,
+      "location": "Houston"
+  },
+  {
+      "category": "Construction and building",
+      "title": "Carpenter",
+      "details": "Building and repairing structures using wood and other materials.",
+      "salary": 55000.0,
+      "location": "Phoenix"
+  },
+  {
+      "category": "Construction and building",
+      "title": "Electrician",
+      "details": "Installing and maintaining electrical systems.",
+      "salary": 65000.0,
+      "location": "Miami"
+  },
+  {
+      "category": "Design, arts, and crafts",
+      "title": "Graphic Designer",
+      "details": "Creating visual content for various media.",
+      "salary": 60000.0,
+      "location": "San Diego"
+  },
+  {
+      "category": "Design, arts, and crafts",
+      "title": "Fashion Designer",
+      "details": "Designing clothing and accessories.",
+      "salary": 55000.0,
+      "location": "New York"
+  },
+  {
+      "category": "Design, arts, and crafts",
+      "title": "Painter",
+      "details": "Creating artwork using various painting techniques.",
+      "salary": 50000.0,
+      "location": "Los Angeles"
+  },
+  {
+      "category": "Education and training",
+      "title": "High School Teacher",
+      "details": "Educating and mentoring high school students.",
+      "salary": 55000.0,
+      "location": "Chicago"
+  },
+  {
+      "category": "Education and training",
+      "title": "Corporate Trainer",
+      "details": "Training employees in corporate settings.",
+      "salary": 70000.0,
+      "location": "San Francisco"
+  },
+  {
+      "category": "Education and training",
+      "title": "Online Course Instructor",
+      "details": "Teaching online courses in various subjects.",
+      "salary": 60000.0,
+      "location": "Denver"
+  },
+  {
+      "category": "Engineering",
+      "title": "Civil Engineer",
+      "details": "Designing and overseeing construction of infrastructure projects.",
+      "salary": 75000.0,
+      "location": "Seattle"
+  },
+  {
+      "category": "Engineering",
+      "title": "Mechanical Engineer",
+      "details": "Designing mechanical systems and products.",
+      "salary": 80000.0,
+      "location": "Austin"
+  },
+  {
+      "category": "Engineering",
+      "title": "Chemical Engineer",
+      "details": "Developing processes for chemical manufacturing.",
+      "salary": 82000.0,
+      "location": "Minneapolis"
+  },
+  {
+      "category": "Law and government",
+      "title": "Attorney",
+      "details": "Providing legal advice and representation to clients.",
+      "salary": 90000.0,
+      "location": "San Jose"
+  },
+  {
+      "category": "Law and government",
+      "title": "Police Officer",
+      "details": "Maintaining law and order, and protecting the public.",
+      "salary": 65000.0,
+      "location": "Portland"
+  },
+  {
+      "category": "Law and government",
+      "title": "Paralegal",
+      "details": "Assisting lawyers in legal research and administrative tasks.",
+      "salary": 55000.0,
+      "location": "Dallas"
+  },
+  {
+      "category": "Specialty",
+      "title": "Astronaut",
+      "details": "Conducting space exploration and research missions.",
+      "salary": 120000.0,
+      "location": "Houston"
+
+      }] 
