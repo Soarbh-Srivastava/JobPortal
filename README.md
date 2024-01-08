@@ -1,6 +1,6 @@
 # Job Portal Website
 
-Welcome to our Job Portal Website! This platform is designed to make the job search process easier by aggregating job listings from various websites, specifically focusing on GitHub. In addition to job scraping, the upcoming version will introduce an exciting new feature: Auto Emailing and Auto Resume Phrasing.
+Welcome to our Job Portal Website! This platform is designed to make the job search process easier by aggregating job listings from various websites. In addition to job scraping, the upcoming version will introduce an exciting new feature: Auto Emailing and Auto Resume Phrasing.
 
 ## Table of Contents
 1. [Features](#features)
