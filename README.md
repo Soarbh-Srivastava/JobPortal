@@ -31,7 +31,7 @@ The new version will also include an auto resume phrasing feature. This function
 
 ### Prerequisites
 - Node.js installed (version 12.0 or higher)
-- MongoDB database
+- PostgreSQL
 
 ### Installation
 1. Clone the repository:
